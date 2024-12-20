@@ -1,0 +1,503 @@
+@charset "utf-8"
+
+
+/* Compass Modules */
+
+@import "compass/css3/box-shadow"
+
+
+/* Variables */
+
+$wrapper-width-default: 890px
+$wrapper-width-medium: 560px
+$wrapper-width-small: 100%
+
+
+/* Fonts */
+
+@font-face
+  font-family: KARNIVOB
+  src: url(../fonts/KARNIVOB.ttf) format('truetype')
+
+
+/* Mixins */
+
+@mixin rounded-corners($r)
+  -moz-border-radius: $r
+  -webkit-border-radius: $r
+  border-radius: $r
+
+@mixin rounded-corners-top($r)
+  -moz-border-radius-topright: $r
+  -moz-border-radius-topleft: $r
+  -webkit-border-top-right-radius: $r
+  -webkit-border-top-left-radius: $r
+  border-top-right-radius: $r
+  border-top-left-radius: $r
+
+
+/* General */
+
+body
+  font-family: KARNIVOB, Verdana, Arial, Georgia, serif
+  background: #00aad3
+  color: #000
+  &.game
+    margin: 0
+    padding: 0
+abbr
+  border: none
+a
+  color: #fff
+  &:visited
+    color: #fff
+
+.wrapper
+  width: 890px
+  margin: 10px auto
+  overflow: hidden
+
+.header
+  position: relative
+  .logo
+    margin: 0
+    padding: 0
+    background: #000
+    float: left
+    img
+      width: 100px
+  .ads
+    min-height: 90px
+  .nav
+    width: 100%
+    min-height: 90px
+    padding-top: 15px
+    text-align: center
+    background: #000
+    .bt-home
+      display: inline-block
+    .menu
+      margin: 0
+      padding: 0
+      border-top: 3px solid #000
+      display: inline-block
+      .item
+        position: relative
+        display: inline-block
+        &:hover, &:focus
+          .tooltip
+            top: 65px
+      .tooltip
+        position: absolute
+        top: -1000px
+        left: 0
+        color: #fff
+        white-space: nowrap
+        display: block
+      .icon-info
+        background: url(../images/bt-info.png) no-repeat 50%
+      .icon-credits
+        background: url(../images/bt-credits.png) no-repeat 50%
+      .icon-screenviews
+        background: url(../images/bt-screenviews.png) no-repeat 50%
+      .icon-play
+        background: url(../images/bt-play.png) no-repeat 50%
+      .icon-contact
+        background: url(../images/bt-contact.png) no-repeat 50%
+      .link
+        width: 70px
+        height: 70px
+        background-size: 300% 100%
+        display: block
+        &:hover, &:focus
+          background-position: 0 0
+  a
+    color: #fff
+    text-decoration: none
+    &:visited
+      color: #fff
+      text-decoration: none
+
+.content
+  overflow: hidden
+  clear: both
+
+.footer
+  position: relative
+  padding: 5px 0
+  font-size: 13px
+  text-align: center
+  color: #fff
+  background: #000
+  clear: both
+  img
+    vertical-align: bottom
+  a
+    color: #fff
+    &:visited
+      color: #fff
+  p
+    margin: 0 20px 0 0
+    padding: 0
+    display: inline-block
+  .languages
+    margin: 0
+    padding: 5px 0
+    list-style: none
+    text-align: center
+    display: inline-block
+    .item
+      margin: 0 10px 0 0
+      padding: 0 10px 0 0
+      border-right: 2px solid #fff
+      line-height: 1
+      display: inline-block
+    .last
+      border-right: none
+    .link,
+    span
+      padding: 0 0 0 0
+      color: #fff
+      text-decoration: none
+      display: block
+    .link
+      &:hover, &:focus
+        color: #fff
+    .selected
+      span
+        color: #f6bd4b
+
+
+/* Main */
+
+.screen-main
+  .content
+    &.bg-1
+      background: url(../images/bg-main-1.png) no-repeat 0 200px
+      background-size: 100% 100%
+    &.bg-2
+      background: url(../images/bg-main-2.png) no-repeat 0 200px
+      background-size: 100% 100%
+    &.bg-3
+      background: url(../images/bg-main-3.png) no-repeat 0 10px
+      background-size: 100% 100%
+    &.bg-4
+      background: url(../images/bg-main-4.png) no-repeat 0 200px
+      background-size: 100% 100%
+
+
+/* Banners */
+
+.stores
+  width: 100%
+  margin: 20px 0 0 0
+  padding: 0
+  list-style: none
+  text-align: center
+  .item
+    margin: 0 0 10px 0
+    display: inline-block
+
+.banner-google-play,
+.banner-app-store
+  position: relative
+  width: 180px
+  height: 60px
+  font-family: Tahoma, Arial, Verdana, serif
+  font-size: 12px
+  text-decoration: none
+  display: block
+  .txt
+    position: absolute
+    top: 10px
+    left: 50px
+    color: #fff
+  .img
+    width: 140px
+.banner-google-play
+  background: url(../images/button-google-play.png) no-repeat 50% 0
+  background-size: 300% 100%
+.banner-app-store
+  background: url(../images/button-app-store.png) no-repeat 50% 0
+  background-size: 300% 100%
+.banner
+  &:hover, &:focus
+    background-position: 0 0
+
+
+/* Download slot */
+
+.download
+  position: relative
+  width: 300px
+  min-height: 560px
+  background: url(../images/illustration-car.png) no-repeat left bottom
+  float: left
+.screen-main
+  .download
+    background: none
+
+
+/* Information slot */
+
+.info-app
+  position: relative
+  width: 540px
+  min-height: 530px
+  margin: 0 0 0 20px
+  padding: 15px
+  color: #fff
+  background: #000
+  float: left
+  .title
+    margin: 0
+    font-size: 30px
+    text-transform: uppercase
+  .extract
+    strong
+      color: #f6bd4b
+  .description
+    margin: 25px 0 10px 0
+    p
+      margin: 0
+      padding: 0 8px
+
+.screen-main
+  .info-app
+    margin-top: 0
+    padding-top: 0
+    background: none
+
+
+/* Contact slot */
+
+.contact
+  position: relative
+  width: 540px
+  min-height: 530px
+  margin: 0 0 0 20px
+  padding: 15px
+  color: #fff
+  background: #000
+  float: left
+  p
+    margin: 10px 0
+    padding: 0
+  label
+    width: 125px
+    margin: 10px 5px 0 0
+    font-size: 17px
+    text-align: right
+    display: block
+    float: left
+  .title
+    margin: 0 0 -15px 0
+    padding: 5px 0 5px 0
+    font-size: 30px
+  .contact-form
+    margin: 30px 0 15px 0
+  .contact-captcha
+    width: 150px
+    margin: 0 0 20px 85px
+    text-align: center
+    float: left
+    label
+      width: 150px
+      margin: 0 auto 5px auto
+      font-size: 10px
+      text-align: center
+      float: none
+      img
+        margin-top: 5px
+    input
+      width: 100px
+      text-align: center
+  .contact-actions
+    width: 100px
+    margin: 20px 15px 0 0
+    float: right
+  .textbox,
+  .textarea
+    width: 370px
+    margin: 10px 0
+    padding: 2px
+    font-size: 16px
+    border: 1px solid #bbb
+  .textarea
+    height: 80px
+    padding: 4px 2px
+  .button
+    width: 100px
+    padding: 7px 0 8px 10px
+    font-size: 12px
+    color: #fff
+    background: url(../images/button-send.png) no-repeat 0 0
+    border: none
+    cursor: pointer
+    &:hover, &:focus, &:active
+      background-position: 100% 0
+  .response
+    margin: 20px 0 -10px 0
+    padding: 4px 50px 4px 10px
+    font-size: 15px
+    border: 1px solid #333
+    @include rounded-corners(4px)
+  .contact-success
+    background: #000 url(../images/icon-send.png) no-repeat 97% center
+  .contact-error
+    background: #000 url(../images/icon-alert.png) no-repeat 97% center
+
+
+/* Credits */
+
+.card,
+.credits
+  dt
+    margin: 0
+    font-size: 13px
+    font-weight: bold
+    color: #f6bd4b
+    a
+      color: #f6bd4b
+      &:visited
+        color: #f6bd4b
+    strong
+      font-size: 18px
+  dd
+    margin: 0 0 14px 0
+    font-size: 18px
+    &.breakline
+      margin-bottom: 0
+
+
+/* Game */
+
+.game
+  .header
+    width: 160px
+    height: 600px
+    margin: 0 10px
+    float: left
+    .title
+      margin: 0
+      padding: 0
+
+
+/* Screenshots Slider */
+
+@import "jquery/theme-metallic"
+
+
+/* Small displays */
+
+@media screen and (max-width: 1205px)
+  .game
+    .header
+      width: 100%
+      height: 95px
+      float: none
+    .title
+      position: absolute
+
+@media screen and (min-width: 481px) and (max-width: 800px) 
+  .wrapper
+    width: $wrapper-width-medium
+    .header
+      .logo
+        display: none
+    .nav
+      .bt-home
+        img
+          width: 100%
+      .menu
+        .item
+          &:hover, &:focus
+            .tooltip
+              top: -1000px
+  .download
+    width: auto
+    min-height: initial
+    background: none
+    float: none
+  .stores
+    margin-top: 5px
+  .info-app,
+  .contact
+    width: auto
+    min-height: initial
+    margin: 0 0 15px 0
+    padding: 0 15px 15px 15px
+    float: none
+    img
+      width: 100%
+    .title
+      padding-top: 25px
+  .contact
+    overflow: hidden
+    label
+      text-align: left
+      float: none
+    .textbox,
+    .textarea
+      width: 96%
+    .contact-captcha
+      margin: 0 0 20px 0px
+  .anythingSlider-metallic
+    .arrow
+      position: absolute
+      bottom: 165px
+
+
+@media screen and (max-width: 480px)
+  .wrapper
+    width: $wrapper-width-small
+  .header
+    .logo
+      display: none
+    .nav
+      .bt-home
+        img
+          width: 100%
+      .menu
+        .item
+          &:hover, &:focus
+            .tooltip
+              top: -1000px
+  .download
+    width: auto
+    min-height: initial
+    background: none
+    float: none
+  .stores
+    margin-top: 5px
+  .info-app,
+  .contact
+    width: auto
+    min-height: initial
+    margin: 0 0 15px 0
+    padding: 0 15px 15px 15px
+    float: none
+    img
+      width: 100%
+    .title
+      padding-top: 25px
+  .contact
+    overflow: hidden
+    label
+      text-align: left
+      float: none
+    .textbox,
+    .textarea
+      width: 90%
+    .contact-captcha
+      margin: 0 0 20px 0px
+  .anythingSlider-metallic
+    .arrow
+      position: absolute
+      bottom: 165px
+    .forward
+      right: 0
+    .back
+      left: 0
+  .anythingSlider
+    margin-left: -30%
