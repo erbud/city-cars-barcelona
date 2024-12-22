@@ -65,7 +65,7 @@
                     <?php if (!$mobileDetect->isMobile() AND !$mobileDetect->isTablet()) { ?>
                     <li class="item"><a href="/game/<?php if (strlen($queryStringLang) > 0) { echo '?'.$queryStringLang; } ?>" class="link icon-play"><span class="tooltip"><?= _str('play.title') ?></span></a></li>
                     <?php } ?>
-                    <li class="item"><a href="contact.php<?php if (strlen($queryStringLang) > 0) { echo '?'.$queryStringLang; } ?>" class="link icon-contact"><span class="tooltip"><?= _str('contact.title') ?></span></a></li>
+                    
                 </ul>
             </div>
         </div>
