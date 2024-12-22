@@ -4,12 +4,12 @@
     include $_SERVER['DOCUMENT_ROOT'].'/includes/mobile-detect.php';
     include $_SERVER['DOCUMENT_ROOT'].'/includes/data.php';
     include $_SERVER['DOCUMENT_ROOT'].'/includes/strings.php';
-
-    $from         = filter_var( trim($_POST["contact-from"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW );
-    $mail         = filter_var( trim($_POST["contact-mail"]) , FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW );
-    $subject      = filter_var( trim($_POST["contact-subject"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW );
-    $message      = filter_var( trim($_POST["contact-message"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW );
-    $captcha      = filter_var( trim($_POST["contact-captcha"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW );
+    
+    $from         = filter_var( trim($_POST["contact-from"]), FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_FLAG_STRIP_LOW );
+    $mail         = filter_var( trim($_POST["contact-mail"]) , FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_FLAG_STRIP_LOW );
+    $subject      = filter_var( trim($_POST["contact-subject"]), FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_FLAG_STRIP_LOW );
+    $message      = filter_var( trim($_POST["contact-message"]), FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_FLAG_STRIP_LOW );
+    $captcha      = filter_var( trim($_POST["contact-captcha"]), FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_FLAG_STRIP_LOW );
     $captchacheck = $_SESSION['captcha'];
 
     if (strlen($from) > 0 OR strlen($mail) > 0 OR strlen($subject) > 0 OR strlen($message) > 0 OR strlen($captcha) > 0) {
@@ -131,7 +131,7 @@
         </div>
         <div class="footer">
             <p>
-                ®2015 CityCarsBarcelona.com, <a href="http://www.zdzapps.com/<?php if (strlen($queryStringLang) > 0) { echo '?'.$queryStringLang; } ?>"><img src="/images/logo-zdz.png" alt="ZDZ" /></a>. <a href="/contact.php<?php if (strlen($queryStringLang) > 0) { echo '?'.$queryStringLang; } ?>"><?= _str('contact.title') ?></a>.
+                ®2015 CityCarsBarcelona
             </p>
             <?= langSwitch() ?>
         </div>

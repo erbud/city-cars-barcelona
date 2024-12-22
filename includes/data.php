@@ -7,7 +7,7 @@
 	$domain 	= 'citycarsbarcelona.com';
 
 	// Languages
-	$lang       = filter_var( trim($_GET["lang"]), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW );
+	$lang       = filter_var( trim($_GET["lang"]), FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_FLAG_STRIP_LOW );
 	$langStores = (strlen($lang) > 0) ? $lang : 'en';
 	$languages 	= array(
 	            	'ca' => 'Català',
@@ -29,7 +29,7 @@
         global $languages;
         global $domain;
 
-        $referer = $_SERVER['HTTP_REFERER'];
+        $referer = 'es'; //$_SERVER['HTTP_REFERER'];
 
         if (!$lang AND strrpos($referer, $domain) === false) {
         	$browser_lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2); // browser language
@@ -90,7 +90,7 @@
 			$select  = ($lang === $code) ? ' selected' : '';
 			$last 	 = ($c === $langs) ? ' last' : '';
 
-			if ($code === 'en') {
+			if ($code === 'es') {
 				$uri  = preg_replace('/(\&|\?)lang=\w{2}/', '', $uri);
 			} else {
 				if (strpos($uri, 'lang=')) {

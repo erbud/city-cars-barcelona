@@ -78,7 +78,7 @@
         </div>
         <div class="footer">
             <p>
-                ®2015 CityCarsBarcelona.com, <a href="http://www.zdzapps.com/<?php if (strlen($queryStringLang) > 0) { echo '?'.$queryStringLang; } ?>"><img src="/images/logo-zdz.png" alt="ZDZ" /></a>. <a href="/contact.php<?php if (strlen($queryStringLang) > 0) { echo '?'.$queryStringLang; } ?>"><?= _str('contact.title') ?></a>.
+                ®2015 CityCarsBarcelona
             </p>
             <?= langSwitch() ?>
         </div>
