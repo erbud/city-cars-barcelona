@@ -38,16 +38,6 @@
             	<img src="/images/logo-citycars-gamepage.png" alt="City Cars Barcelona" />
             </a>
         </h1>
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<!-- Ads Adaptable -->
-		<ins class="adsbygoogle"
-		     style="display:block"
-		     data-ad-client="ca-pub-4435411492943008"
-		     data-ad-slot="2138904772"
-		     data-ad-format="auto"></ins>
-		<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
 	</div>
 	<div id="game"></div>
 </body>
